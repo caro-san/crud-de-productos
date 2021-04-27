@@ -37,7 +37,7 @@
 
             <div class="col-lg-5 float-right">
 
-                <form action="http://localhost/slim/api.php/productos" id="form" method="post" data-producto="0">
+                <form action="" id="form" method="post" data-producto="0">
                     <div class="form-group">
                         <label for="name_form">Nombre</label>
                         <input type="text" class="form-control" id="name_form" name="name" aria-describedby="nombreProduct" placeholder="Ingrese el nombre de producto">
@@ -65,38 +65,36 @@
             <hr>
 
             <div class="row">
-              
-            <div class="col-lg float-right">
-                  <h3 style="text-align: center;">Actualizar</h3>
+                <div class="col-lg float-right">
+                    <h3 style="text-align: center;">Actualizar</h3>
+                    <form action="" id="formUpdate" method="post" data-producto="">
+                        
+                        <div class="form-group">
+                            <input type="hidden" class="form-control" id="id_formUP" name="name" placeholder="Ingrese el nombre de producto">
+                        </div>
 
-              <form action="http://localhost/slim/api.php/productos" id="formUpdate" method="post" data-producto="">
-                
-                  <div class="form-group">
-                      <label for="name_formUP">Nombre</label>
-                      <input type="text" class="form-control" id="name_formUP" name="name" placeholder="Ingrese el nombre de producto">
-                  </div>
-    
-                  <div class="form-group">
-                      <label for="description_formUP">Descripcion</label>
-                      <textarea class="form-control rounded-0" id="description_formUP" name="description" rows="3" placeholder="Descripcion del producto"></textarea>
-                  </div>
-    
-                  <div class="form-group">
-                      <label for="price_formUP">Precio</label>
-                      <div class="input-group mb-2 mr-sm-2"> 
-                          <div class="input-group-prepend">
-                              <div class="input-group-text">$</div>
-                          </div>
-                      <input type="text" class="form-control" id="price_formUP" name="price" placeholder="Precio">
-                      </div>
-    
-                  <button id="btnEditar" type="submit" class="btn btn-outline-info">Actualizar</button>
-                  <!--<button value="btnEditar" type="submit" class="btn btn-outline-info">Editar</button>-->
-    
-    
-    
-              </form>
-          </div>
+                        <div class="form-group">
+                            <label for="name_formUP">Nombre</label>
+                            <input type="text" class="form-control" id="name_formUP" name="name" placeholder="Ingrese el nombre de producto">
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="description_formUP">Descripcion</label>
+                            <textarea class="form-control rounded-0" id="description_formUP" name="description" rows="3" placeholder="Descripcion del producto"></textarea>
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="price_formUP">Precio</label>
+                            <div class="input-group mb-2 mr-sm-2"> 
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">$</div>
+                                </div>
+                            <input type="text" class="form-control" id="price_formUP" name="price" placeholder="Precio">
+                            </div>
+            
+                        <button id="btnActualizar" type="button" class="btn btn-outline-info">Actualizar</button>
+                    </form>
+                </div>
             </div>
         </div>
 

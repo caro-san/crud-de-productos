@@ -27,26 +27,25 @@
 
             //Actualizacion
                     $(".update").unbind("click").click(function(){ 
+                        $("#id_formUP").val($(this).parents("tr").find("th")[0].innerHTML);
                         $("#name_formUP").val($(this).parents("tr").find("td")[0].innerHTML);
                         $("#description_formUP").val($(this).parents("tr").find("td")[1].innerHTML);
                         $("#price_formUP").val($(this).parents("tr").find("td")[2].innerHTML);
 
-
-                        $("#btnEditar").submit(function(e){
+                        /*
+                        $("#form").submit(function(e){
                             e.preventDefault();
-
                             $.ajax({
                                 url: "http://localhost/slim/api.php/productos/"+$(this).data("producto"),
-                                type:"post",
-                                data:  {name:$("#name_form").val() , description:$("#description_form").val() , price:$("#price_form").val() },
-                                success: function(response){
+                                type:"get",
+                                data:  {name:$("#name_formUP").val() , description:$("#description_formUP").val() , price:$("#price_formUP").val() },
+                                success: function(){
                                     $(".table").html("<thead><tr><th scope='col'>ID</th><th scope='col'>Nombre</th><th scope='col'>Descripcion</th><th scope='col'>Precio</th><th scope='col'>Eliminar</th><th scope='col'>Editar</th></tr></thead>");
                                     $("#form")[0].reset();
                                 }
                             });
                         });
-
-
+                        */
                     });
 
             //Elimina el registro seleccionado METODO DELETE
@@ -88,5 +87,23 @@
             });
 
         }
+    });
+
+    $("#btnActualizar").click(function(){
+        var id = $('#id_formUP').val();
+        var nombre = $('#name_formUP').val();
+        var descripcion = $('#description_formUP').val();
+        var precio = $('#price_formUP').val();
+
+        $.ajax({
+            url: "http://localhost/slim/api.php/productos",
+            type: "put",
+            data: {id:id , name:nombre , description:descripcion , price:precio },
+            success: function(){
+                
+            }
+        });
+        
+
 
     });
