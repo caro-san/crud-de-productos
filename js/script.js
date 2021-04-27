@@ -97,10 +97,10 @@
 
         $.ajax({
             url: "http://localhost/slim/api.php/productos",
-            type: "put",
+            type: "post",
             data: {id:id , name:nombre , description:descripcion , price:precio },
-            success: function(){
-                
+            success: function(data){
+                alert(id);
             }
         });
         
